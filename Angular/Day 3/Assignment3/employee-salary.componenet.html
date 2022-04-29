@@ -1,0 +1,41 @@
+
+<!-- CUSTOM PIPE WITH PARAMETERS EXAMPLE -->
+<style>
+    table,th,tr,td{
+        border: 1px solid;
+    }
+</style>
+<div class="container">
+    <div class="row">
+    Salary filter property:
+        Min Value:<select [(ngModel)]="filterMinValue" >
+            <option>500</option>
+            <option>1000</option>
+            <option>2000</option>
+        </select>
+        Max Value:<select [(ngModel)]="filterMaxValue">
+            <option>3000</option>
+            <option>400000</option>
+            <option>10000</option>
+            </select>
+            <button (click)="salaryRangeFilter()">Get Data</button>
+    </div>
+    <div class="row">
+        <table >
+            <tr>
+                <th>Emp.No</th>
+                <th>Employee Name</th>
+                <th>Employee Job</th>
+                <th>Salary</th>
+                <th>Dept no</th>
+            </tr>
+            <tr *ngFor="let e of empList | salarypipe: key:max:min">
+                <td>{{e.number}}</td>
+                <td>{{e.name}}</td>
+                <td>{{e.job}}</td>
+                <td>{{e.salary}}</td>
+                <td>{{e.deptnO}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
