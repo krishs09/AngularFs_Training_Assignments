@@ -1,0 +1,19 @@
+<style>
+    table,th,tr,td{
+        border: 1px solid;
+    }
+</style>
+<div>
+    <table >
+        <tr>
+            <th>S.No</th>
+            <th>Employee Name</th>
+            <th>Grades</th>
+        </tr>
+        <tr *ngFor="let e of empList;index as i">
+            <td>{{i+1}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.grade | gradepipe}}</td>
+        </tr>
+    </table>
+</div>
