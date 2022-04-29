@@ -1,0 +1,20 @@
+<!-- PIPE EXAMPLE -->
+<div class ="container">
+    <div class="row">
+        <div class="col-md-4">
+            <button *ngIf="userList.length >= next" (click)="loadMore()">Load more...</button>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div *ngFor="let u of userList | slice : start:next"  class="col-md-3">
+            <div class="card">
+                <div >
+                    Name:<span>{{u.name}}</span>
+                    Age:<span>{{u.age}}</span>
+                    Gender:<span>{{u.gender}}</span>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
