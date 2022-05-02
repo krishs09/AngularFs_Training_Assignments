@@ -23,11 +23,16 @@
                 <option>List</option>
             </select>
         </div> -->
-        <div  class="col-md-6">
+        <!-- <div  class="col-md-6">
             <img *ngFor="let m of modes" (click)="changeMode(m.name)" 
             style="width: 70px;height: 70px;padding: 5px;" src="../assets/{{m.value}}"> 
         </div>
-      </div>
+      </div> -->
+      <div  class="col-md-6">
+        <img *ngFor="let m of modes" (mouseover)="changeMode(m.name)" 
+        style="width: 70px;height: 70px;padding: 5px;" src="../assets/{{m.value}}"> 
+    </div>
+  </div>
      <hr/>
 <div class="row">
     <section [ngSwitch]="displayMode">
