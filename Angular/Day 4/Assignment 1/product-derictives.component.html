@@ -15,13 +15,17 @@
       <div class="col-md-2">
         <span> Select mode</span>
       </div> 
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <select [(ngModel)]="displayMode">
                 <option>Details</option>
                 <option>Large Image</option>
                 <option>Small Image</option>
                 <option>List</option>
             </select>
+        </div> -->
+        <div  class="col-md-6">
+            <img *ngFor="let m of modes" (click)="changeMode(m.name)" 
+            style="width: 70px;height: 70px;padding: 5px;" src="../assets/{{m.value}}"> 
         </div>
       </div>
      <hr/>
