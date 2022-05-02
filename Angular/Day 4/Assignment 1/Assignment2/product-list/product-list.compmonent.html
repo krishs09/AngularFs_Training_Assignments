@@ -1,0 +1,27 @@
+<!-- <div class="test">
+    <div class="card" *ngFor = "let item of filteredProducts" style="width: 100%;">
+        <div class="container">
+                <p>Product Id : {{item.pid}}</p>
+                <p>Product Name : {{item.pname}}</p>
+                <p>Price : {{item.price}}</p>
+                <p>Quantity : {{item.quantity}}</p>
+                <hr>
+            </div>
+    </div>
+</div> -->
+<ng-content></ng-content>
+<table border="2">
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Product Price</th>
+    <th>Product Quantity</th>
+    <th>Product Category</th>
+    <tr *ngFor = "let item of products" >
+        <td>{{item.pid}}</td>
+        <td>{{item.pname}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.category}}</td>
+        
+    </tr>
+</table>
