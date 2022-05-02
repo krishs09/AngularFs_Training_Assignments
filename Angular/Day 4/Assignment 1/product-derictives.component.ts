@@ -9,6 +9,11 @@ export class ProductDirectivesComponent{
 
   displayMode:string="Details";
 
+  modes=[{name:"Details",value:"details.png"},
+  {name:"Large Image",value:"largeImage.png"},
+  {name:"Small Image",value:"smallImage.png"}, 
+  {name:"List",value:"list.png"}];
+
   productsArr= [
     { name: "Samsung", category: "Mobiles",price:23123,image:'phone.jpg'},
     { name: "Bed", category: "Furniture" ,price:23123,image:'bed.jpg'},
@@ -18,4 +23,8 @@ export class ProductDirectivesComponent{
     { name: "Laptop", category: "Electronics",price:23123,image:'laptop.jpg'},
   ] ;
 
+  
+changeMode(item:any){
+  this.displayMode=item;
+}
 }
