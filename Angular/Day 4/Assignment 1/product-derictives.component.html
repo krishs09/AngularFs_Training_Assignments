@@ -1,0 +1,103 @@
+<style>
+    th,tr,td{
+        border: 1px solid ;
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <div class="row"><h2>Directives in Angular example</h2></div>
+</div>
+<hr/>
+<div class="container">
+
+    <div class="row">
+      <div class="col-md-2">
+        <span> Select mode</span>
+      </div> 
+        <div class="col-md-4">
+            <select [(ngModel)]="displayMode">
+                <option>Details</option>
+                <option>Large Image</option>
+                <option>Small Image</option>
+                <option>List</option>
+            </select>
+        </div>
+      </div>
+     <hr/>
+<div class="row">
+    <section [ngSwitch]="displayMode">
+        <article *ngSwitchCase="'Details'">
+           <!-- Content in Table mode -->
+                <div class="row">
+                    <table border="2" cellspacing="0" cellpadding="5" width="50%">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                        
+                        </tr>
+                        <tr *ngFor="let p of productsArr ;let i=index;let e=even;let o=odd" [ngClass]="{'bg1':e,'bg2':o}">
+                            <td>{{p.name}}</td>
+                            <td>{{p.category}}</td>
+                            <td>{{p.price}}</td>
+                    
+                        </tr>
+                    </table>
+                </div>
+        </article>
+        <article *ngSwitchCase="'Large Image'">
+           <!-- Content in Large image mode -->
+                <div class="container">
+                    <div class="row">
+                        <div class="card col-md-4" *ngFor="let item of productsArr">
+                            <div class="card-body">
+                                <img style="width: 200px;height: 200px;" src="../assets/{{item.image}}"> 
+                            </div>
+                            <div class="card-footer">
+                            Name: <b> {{item.name}}</b><br>
+                            Price: <b> {{item.price}}/-</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </article>
+        <article *ngSwitchCase="'Small Image'">
+            <!-- Content in Small image mode -->
+            <div class="container">
+                <div class="row">
+                    <div class="card col-md-4" *ngFor="let item of productsArr">
+                        <div class="card-body" style="text-align: center;">
+                            <img style="width: 80px;height: 90px;" src="../assets/{{item.image}}"> 
+                        </div>
+                        <div class="card-footer">
+                        Name: <b> {{item.name}}</b><br>
+                        Catgegory:<b> {{item.category}}</b><br>
+                        Price: <b> {{item.price}}/-</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article *ngSwitchCase="'List'">
+           <!-- Content in List mode -->
+                <div class="container">
+                    <div class="row" style="border: 2px solid gray;">
+                        <ul>
+                            <li *ngFor="let p of productsArr">
+                                <span [ngStyle]="{'color': (p.category == 'Electronics'? 'Red': 'Green')}">{{p.name}}</span>,
+                                {{p.price}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </article>
+       
+    </section>
+</div>
+
+</div>
+
+
+
+
