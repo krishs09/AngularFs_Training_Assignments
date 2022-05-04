@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+       
+        <div style="text-align: center;">
+            <span><h4>TodoInput</h4></span>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="border: 1px solid gray; padding: 20px;">
+            <div class="row">
+                <input [(ngModel)]="task" type="text" style="margin-bottom:10px;">
+                    <button class="btn btn-primary" (click)="addTask()">Add new task</button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+        
+    </div><br><br>
+    <div class="row">
+       
+        <div style="text-align: center;">
+            <span><h4>ToDoList</h4></span>
+        </div>
+    </div>
+    <div class="row" style="border: 1px solid gray;padding: 20px;" *ngFor="let t of taskList;index as i;">
+        <div class="col-md-9">
+           {{t}}
+        </div>
+        <div class="col-md-1">
+            <input type="checkbox" value="i">
+        </div>
+        <div class="col-md-1">
+            <i style="color: yellowgreen;"  class="bi bi-pencil"></i>
+        </div>
+        <div class="col-md-1">
+            <i class="bi bi-trash" style="color: red;"></i>
+        </div>
+    </div>
+</div>>
