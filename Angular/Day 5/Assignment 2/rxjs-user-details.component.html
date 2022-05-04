@@ -1,1 +1,17 @@
 
+<div>
+    <button (click)="getData()"> Get  Data</button>
+    {{userDetails | json}}
+    <table >
+        <tr>
+            <th>S.No</th>
+            <th>User Name</th>
+            <th>Grades</th>
+        </tr>
+        <tr *ngFor="let e of userDetails;index as i">
+            <td>{{i+1}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.email}}</td>
+        </tr>
+    </table>
+</div>
