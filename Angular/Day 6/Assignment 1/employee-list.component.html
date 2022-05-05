@@ -1,1 +1,38 @@
 
+<hr/>
+
+<input type="text"  [(ngModel)]="name"  placeholder="Employee Name"  />
+<input type="text"  [(ngModel)]="job"  placeholder="Job"  />
+<input type="text"  [(ngModel)]="salary"  placeholder="Salary"  />
+<input type="text"  [(ngModel)]="deptNo"  placeholder="Deptno"  />
+<br/><br/>
+<input type="button"  value="Get Employee" (click)="getData_click()"  />
+<input type="button"  value="Add Employee" (click)="addData_click()"  />
+<input type="button"  value="Update Employee" (click)="updateData_click()"  />
+<input type="button"  value="Clear Fields" (click)="clearFields()"  />
+<hr/>
+
+<hr/>
+
+<table border="2"   cellspacing="0">
+	<tr>
+	  <th>Employee Id</th>
+	  <th> Name</th>
+	  <th>Job</th>
+	  <th>Salary</th>
+	  <th>Dept no</th>
+    <th></th>
+	</tr>
+
+	<tr *ngFor="let item of studentsArray">
+	  <td>{{item.employeeId}}</td>
+	  <td>{{item.name}}</td>
+	  <td>{{item.job}}</td>
+	  <td>{{item.salary}}</td>
+	  <td>{{item.deptNo}}</td>
+    <td align="center">
+      <a href="javascript:void(0);" (click)="selectData_click(item.studentId)">Select</a> |
+      <a href="javascript:void(0);" (click)="deleteData_click(item.studentId)">Delete</a>
+    </td>
+	</tr>
+  </table>
