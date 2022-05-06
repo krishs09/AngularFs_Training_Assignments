@@ -1,0 +1,67 @@
+<style>
+	.error {   color : Red;  }
+</style>
+
+<h3> Vehicle registration form using  Model Driven  </h3>
+<hr/>
+
+<form [formGroup]="vehicleForm" (submit)="submit_click()">
+  <fieldset>
+      <legend>Vehicle Registration Form</legend>
+
+      Owner Name:
+      <input type="text" formControlName="name"  />
+      <span *ngIf="vehicleForm.controls['name'].invalid && vehicleForm.controls['name'].dirty" class="error">Required</span>
+
+      <br/><br/>
+
+      Contact :
+      <input type="text" formControlName="contact"  />
+      <span *ngIf="vehicleForm.controls['contact'].invalid && vehicleForm.controls['contact'].dirty" class="error">Required</span>
+      <br/><br/>
+
+
+      Owner Email  : <input formControlName="email"  />
+      <span  class="error"  *ngIf="vehicleForm.controls['email'].invalid && vehicleForm.controls['email'].dirty">
+        Required
+    </span>
+    <br><br>
+
+     Vehicle Registration Number  :
+    <input  formControlName="registrationNumber"  />
+    <span  class="error"  *ngIf="vehicleForm.controls['registrationNumber'].invalid && vehicleForm.controls['registrationNumber'].dirty">
+      Enter proper format
+    </span>
+    <br><br>
+
+    Address :
+    <input 	formControlName="address"  />
+      <span  class="error"  *ngIf="vehicleForm.controls['address'].invalid && vehicleForm.controls['address'].dirty">
+        Required
+      </span>
+    <br><br>
+
+    Model :
+    <input 	formControlName="modelName"  />
+      <span  class="error"  *ngIf="vehicleForm.controls['modelName'].invalid && vehicleForm.controls['modelName'].dirty">
+         Should be 10 character
+      </span>
+    <br><br>
+
+    Color :
+    <input 	formControlName="color"  />
+      <span  class="error"  *ngIf="vehicleForm.controls['color'].invalid && vehicleForm.controls['color'].dirty">
+       Required
+      </span>
+    <br><br>
+
+    Year :
+    <input 	formControlName="year"  />
+      <span  class="error"  *ngIf="vehicleForm.controls['year'].invalid && vehicleForm.controls['year'].dirty">
+        Invalid year
+      </span>
+    <br><br>
+
+      <button [disabled]="vehicleForm.invalid">Register</button>
+  </fieldset>
+</form>
