@@ -14,9 +14,9 @@ export class AngularFormVehicleRegistrationComponent  {
     email:new FormControl("",Validators.email),
     registrationNumber:new FormControl(),
     address:new FormControl("",Validators.required),
-    modelName:new FormControl(Validators.pattern('\\d{10}')),
+       modelName:new FormControl(Validators.minLength(10)),
     color:new FormControl("",Validators.required),
-    year:new FormControl("",Validators.pattern('/^(199\d|200\d|2010)$/')),
+    year:new FormControl("",[Validators.min(2012),Validators.max(2020)]),
   });
 
   submit_click(){
