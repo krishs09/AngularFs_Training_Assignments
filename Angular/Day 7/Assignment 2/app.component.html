@@ -1,0 +1,61 @@
+
+
+<div class="content" role="main">
+
+
+    <!-- <app-emp></app-emp>
+    <hr>
+    <app-friends></app-friends>
+    <hr>
+    <app-sales></app-sales> -->
+
+    <!-- <app-products  [productDetails]="productsArray" (selectedCat)="getProductList($event)" ></app-products> -->
+    <!-- <app-sort-options></app-sort-options>
+    <hr>
+    <app-emp-list></app-emp-list> -->
+    <!-- <app-user-info></app-user-info> -->
+    <!-- <app-employee-grades></app-employee-grades> -->
+    <!-- <app-employee-salary></app-employee-salary> -->
+    <!-- <app-product-directives></app-product-directives> -->
+    <!-- <app-fancy-card>
+        <h4 bottom>This is the footer from the Fancy Component</h4>
+        
+        <app-product-list>
+            <span>This is the data from product-list component</span>
+        </app-product-list>
+    
+        <p>This is the default ng-content data from App component to fancy-card</p>
+    
+       
+        <h1 top>This is the header from the Fancy component</h1>
+    </app-fancy-card> -->
+    <!-- <app-todo></app-todo> -->
+    <!-- <app-rxjs-demo></app-rxjs-demo> -->
+    <!-- <app-students-list></app-students-list> -->
+    <!-- <app-angular-form-vehicle-registration></app-angular-form-vehicle-registration> -->
+
+    <p appCustomDirective1>Test of custom directives this is attribute directive</p>
+    <p [appCustomDirective1]="'Yellow'">Test of custom directives this is attribute directive</p>
+
+    <!-- <div *appCustomDirective2="true">
+        <p > DIV 1 This is structural directive example  </p>
+    </div>
+    <div *appCustomDirective2="false">
+        <p > DIV 2 This is structural directive example  </p>
+    </div> -->
+
+    <div *appCustomDirective2="'Scott'">
+        <p >My Name is Scott  </p>
+    </div>
+    <div *appCustomDirective2="'Smith'">
+        <p >My Name is Smith  </p>
+    </div>
+    <div *appCustomDirective2="'Robert'">
+        <p >My Name is Robert  </p>
+    </div>
+    <div *appCustomDirective2="'Sam'">
+        <p >My Name is Sam  </p>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
