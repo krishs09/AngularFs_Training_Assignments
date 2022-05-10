@@ -34,9 +34,25 @@ describe('AmountcalculationComponent', () => {
     expect(result).toBe("");
   });
 
-  it('should check result message after calling method', () => {
-    let result= component.result;
+  it('should check positive result message after calling method', () => {
+    component.unitPrice= 100;
+    component.quantity = 1;
+    component.getTotalAmount();
+    const result:string = component.result;
      expect(result).toBe("Thank you for your purchase!");
    });
 
+   it('should check positive result message after calling method', () => {
+    component.unitPrice= 0;
+    component.quantity = 0;
+    component.getTotalAmount();
+    const result:string = component.result;
+     expect(result).toBe("Not valid");
+   });
+
+   it('should contain success in span tag ', () => {
+   let spanObj = fixture.nativeElement.querySelector('span');
+
+   expect(spanObj.textContent).toContain('Total amount');
+   });
 });
