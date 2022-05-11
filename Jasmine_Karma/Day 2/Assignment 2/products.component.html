@@ -1,0 +1,11 @@
+<div>
+    <select [(ngModel)]="selectCategory" (change)="getProductsBasedOnCategory_child()">
+        <option *ngFor="let c of categories">{{c.name}}</option>
+    </select>
+</div>
+<div>
+    <span>Selected Category: {{selectCategory}}</span>
+</div>
+<div *ngIf=" productDetails.size > 0">
+    <span>{{productDetails}}</span>
+</div>
