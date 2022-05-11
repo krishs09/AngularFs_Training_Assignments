@@ -1,0 +1,13 @@
+<div class="content" role="main">
+
+
+    <!-- <app-emp></app-emp>
+    <hr>
+    <app-friends></app-friends>
+    <hr>
+    <app-sales></app-sales> -->
+
+    <app-products  [productDetails]="productsArray" (selectedCat)="getProductList($event)"></app-products>
+</div>
+
+<router-outlet></router-outlet>
